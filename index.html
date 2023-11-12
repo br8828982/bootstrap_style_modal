@@ -67,7 +67,7 @@
 
       const targetId = button && button.getAttribute('data-target');
       const element = document.getElementById(targetId);
-      const isOpen = element.classList.contains("open");
+      const isOpen = element && element.classList.contains("open");
 
       if (button) return fade(element, !isOpen);
 
