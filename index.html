@@ -62,7 +62,7 @@
       element.classList.toggle('open', open);
     };
     
-    document.addEventListener('click', function (event) {
+    const handleClick = (event) => {
       const button = event.target.closest('.button');
 
       const targetId = button && button.getAttribute('data-target');
@@ -78,8 +78,9 @@
       const isClickedOutside = !modalContent.contains(event.target);
 
       if (modal && !isStaticBackdrop && isClickedOutside) fade(modal, false);
-    });
+    };
 
+    document.body.addEventListener("click", handleClick);
   </script>
 
 </body>
