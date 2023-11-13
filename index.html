@@ -77,22 +77,20 @@
       element.classList.toggle('open', open);
     };
 
-  
     const handleClick = (event) => {
       const button = event.target.closest('.button');
+      const activeElement = event.target.closest('.modal.open');
   
       if (button) {
         const targetId = button.getAttribute('data-target');
         const element = document.getElementById(targetId);
         const isOpen = element?.classList.contains("open");
-        const openModal = document.querySelector('.modal.open');
+        const activeElement = document.querySelector('.modal.open');
 
-        openModal && fade(openModal, false);
+        activeElement && fade(activeElement, false);
         
         fade(element, !isOpen);
       }
-  
-      const activeElement = event.target.closest('.modal.open');
   
       if (activeElement) {
         const isStaticBackdrop = activeElement.getAttribute('data-backdrop') === 'static';
