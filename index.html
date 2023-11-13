@@ -77,13 +77,13 @@
 
       if (button) return fade(element, !isOpen);
 
-      const activeModal = document.querySelector('.modal.open');
+      const activeElement = document.querySelector('.modal.open');
 
-      const isStaticBackdrop = activeModal?.getAttribute('data-backdrop') === 'static';
+      const isStaticBackdrop = activeElement?.getAttribute('data-backdrop') === 'static';
       const modalContent = document.querySelector('.modal-content');
       const isClickedOutside = !modalContent.contains(event.target);
 
-      activeModal && !isStaticBackdrop && isClickedOutside && fade(activeModal, false);
+      activeElement && !isStaticBackdrop && isClickedOutside && fade(activeElement, false);
     };
 
     document.body.addEventListener("click", handleClick);
