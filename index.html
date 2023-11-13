@@ -48,7 +48,7 @@
 
   <button class="button" data-target="modal1">Open Modal</button>
 
-  <div id="modal1" class="modal">
+  <div id="modal1" class="modal" data-backdrop="static">
     <div class="modal-content">
       <p>This is a simple modal!</p>
       <button class="button" data-target="modal1">Close Modal</button>
@@ -71,19 +71,19 @@
     const handleClick = (event) => {
       const button = event.target.closest('.button');
 
-      const targetId = button && button.getAttribute('data-target');
+      const targetId = button?.getAttribute('data-target');
       const element = document.getElementById(targetId);
-      const isOpen = element && element.classList.contains("open");
+      const isOpen = element?.classList.contains("open");
 
       if (button) return fade(element, !isOpen);
 
       const modal = document.querySelector('.modal.open');
 
-      const isStaticBackdrop = modal && modal.getAttribute('data-backdrop') === 'static';
+      const isStaticBackdrop = modal?.getAttribute('data-backdrop') === 'static';
       const modalContent = document.querySelector('.modal-content');
       const isClickedOutside = !modalContent.contains(event.target);
 
-      if (modal && !isStaticBackdrop && isClickedOutside) fade(modal, false);
+      modal && !isStaticBackdrop && isClickedOutside && fade(modal, false);
     };
 
     document.body.addEventListener("click", handleClick);
