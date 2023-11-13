@@ -82,7 +82,9 @@
 
       const targetId = button?.getAttribute('data-target');
       const element = document.getElementById(targetId);
+      
       const isOpen = element?.classList.contains("open");
+      
       const activeElement = event.target.closest('.modal.open');
       const isStaticBackdrop = activeElement?.getAttribute('data-backdrop') === 'static';
       const modalContent = activeElement?.querySelector('.modal-content');
