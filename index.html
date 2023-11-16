@@ -46,21 +46,21 @@
 
 <body>
 
-  <button class="button" data-target="modal1">Open Modal</button>
+  <button class="modal-trigger" data-target="modal1">Open Modal</button>
 
   <div id="modal1" class="modal" data-backdrop="static">
     <div class="modal-content">
       <p>This is a simple modal!</p>
-      <button class="button" data-target="modal1">Close Modal</button>
-      <button class="button" data-target="modal2">2nd Modal</button>
+      <button class="modal-trigger" data-target="modal1">Close Modal</button>
+      <button class="modal-trigger" data-target="modal2">2nd Modal</button>
     </div>
   </div>
 
   <div id="modal2" class="modal">
     <div class="modal-content">
       <p>This is a simple modal!</p>
-      <button class="button" data-target="modal2">Close Modal</button>
-      <button class="button" data-target="modal1">1st Modal</button>
+      <button class="modal-trigger" data-target="modal2">Close Modal</button>
+      <button class="modal-trigger" data-target="modal1">1st Modal</button>
     </div>
   </div>
 
@@ -78,23 +78,23 @@
     };
     
     const handleClick = (event) => {
-      const button = event.target.closest('.button');
+      const trigger = event.target.closest('.modal-trigger');
 
-      const targetId = button?.getAttribute('data-target');
+      const targetId = trigger?.getAttribute('data-target');
       const element = document.getElementById(targetId);
       
       const isOpen = element?.classList.contains("open");
       
-      const activeElement = event.target.closest('.modal.open');
+      const activeElement = document.querySelector('.modal.open');
       const isStaticBackdrop = activeElement?.getAttribute('data-backdrop') === 'static';
       const modalContent = activeElement?.querySelector('.modal-content');
       const isClickedOutside = !modalContent?.contains(event.target);
 
       activeElement && !isStaticBackdrop && isClickedOutside && fade(activeElement, false);
 
-      button && activeElement && fade(activeElement, false);
+      trigger && activeElement && fade(activeElement, false);
 
-      button && fade(element, !isOpen);
+      trigger && fade(element, !isOpen);
     };
 
     document.body.addEventListener("click", handleClick);
