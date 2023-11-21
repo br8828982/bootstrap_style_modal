@@ -129,10 +129,15 @@ A simple modal component for creating modals with flexible and customizable feat
 
 **Backdrop Behavior:**
 
-Set the `data-backdrop` attribute to `'static'` if you want to prevent closing on clicking outside the modal content.
+- Set the `data-backdrop` attribute to `'static'` if you want to prevent closing on clicking outside the modal content.
 
 **Styling:**
 
-Customize the modal appearance by adjusting the provided CSS styles.
+- Customize the modal appearance by adjusting the provided CSS styles.
+
+**JavaScript Functionality:**
+
+- Adjust the JavaScript code to fit your specific requirements.
+- Feel free to enhance the functionality or add additional features
 
 Feel free to integrate, modify, and enhance this modal component according to your project's requirements.
