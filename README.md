@@ -32,7 +32,7 @@ A simple modal component for creating modals with flexible and customizable feat
        <button class="modal-trigger" data-target="modal1">1st Modal</button>
      </div>
    </div>
-   ```html
+   
 2. **CSS Styles:**
-
-Include the provided CSS styles in your stylesheet for proper modal styling.
+   Include the provided CSS styles in your      stylesheet for proper modal styling.
+   
