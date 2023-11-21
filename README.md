@@ -77,6 +77,8 @@ A simple modal component for creating modals with flexible and customizable feat
 
 3. **JavaScript:**
 
+   The JavaScript code handles the modal functionality with a fade effect. It utilizes event delegation for efficient handling of clicks.
+
    ```javascript
    // Function to toggle modal visibility
     const fade = (element, open) => {
