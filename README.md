@@ -78,7 +78,6 @@ A simple modal component for creating modals with flexible and customizable feat
 3. **JavaScript:**
 
    ```javascript
-   <script>
   // Function to toggle modal visibility
   const fade = (element, open) => {
     element.style.display = "flex";
@@ -123,7 +122,6 @@ A simple modal component for creating modals with flexible and customizable feat
 
   // Event delegation
   document.body.addEventListener("click", handleClick);
-</script>
 
 ## Customization
 
