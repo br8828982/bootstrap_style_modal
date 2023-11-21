@@ -77,51 +77,53 @@ A simple modal component for creating modals with flexible and customizable feat
 
 3. **JavaScript:**
 
-```javascript
-// Function to toggle modal visibility
-const fade = (element, open) => {
-  element.style.display = "flex";
+   ```javascript
+   <script>
+  // Function to toggle modal visibility
+  const fade = (element, open) => {
+    element.style.display = "flex";
 
-  element.offsetHeight;
+    element.offsetHeight;
 
-  const removeStyle = () => element.removeAttribute('style');
+    const removeStyle = () => element.removeAttribute('style');
 
-  element.addEventListener('transitionend', removeStyle);
+    element.addEventListener('transitionend', removeStyle);
 
-  element.classList.toggle('open', open);
-};
+    element.classList.toggle('open', open);
+  };
 
-// Handle click event on document and modal triggers
-const handleClick = (event) => {
-  const trigger = event.target.closest('.modal-trigger');
+  // Handle click event on document and modal triggers
+  const handleClick = (event) => {
+    const trigger = event.target.closest('.modal-trigger');
 
-  const targetId = trigger?.getAttribute('data-target');
-  const triggeredModal = document.getElementById(targetId);
+    const targetId = trigger?.getAttribute('data-target');
+    const triggeredModal = document.getElementById(targetId);
 
-  const isOpen = triggeredModal?.classList.contains("open");
+    const isOpen = triggeredModal?.classList.contains("open");
 
-  const activeModal = document.querySelector('.modal.open');
-  // Do not close on click outside if data-backdrop is set to static
-  const isStaticBackdrop = activeModal?.getAttribute('data-backdrop') === 'static';
-  const modalContent = activeModal?.querySelector('.modal-content');
-  const isClickedOutside = !modalContent?.contains(event.target);
+    const activeModal = document.querySelector('.modal.open');
+    // Do not close on click outside if data-backdrop is set to static
+    const isStaticBackdrop = activeModal?.getAttribute('data-backdrop') === 'static';
+    const modalContent = activeModal?.querySelector('.modal-content');
+    const isClickedOutside = !modalContent?.contains(event.target);
 
-  // Close active modal if clicked outside its content
-  if (activeModal && !isStaticBackdrop && isClickedOutside) {
-    fade(activeModal, false);
-  }
+    // Close active modal if clicked outside its content
+    if (activeModal && !isStaticBackdrop && isClickedOutside) {
+      fade(activeModal, false);
+    }
 
-  if (!trigger) return;
+    if (!trigger) return;
 
-  // Close active modal.
-  if (activeModal) fade(activeModal, false);
+    // Close active modal.
+    if (activeModal) fade(activeModal, false);
 
-  // Toggle triggered modal
-  fade(triggeredModal, !isOpen);
-};
+    // Toggle triggered modal
+    fade(triggeredModal, !isOpen);
+  };
 
-// Event delegation
-document.body.addEventListener("click", handleClick);
+  // Event delegation
+  document.body.addEventListener("click", handleClick);
+</script>
 
 ## Customization
 
