@@ -34,5 +34,6 @@ A simple modal component for creating modals with flexible and customizable feat
    </div>
    
 2. **CSS Styles:**
-   Include the provided CSS styles in your      stylesheet for proper modal styling.
+
+   Include the provided CSS styles in your stylesheet for proper modal styling.
    
